@@ -2,32 +2,245 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+h1 {
+  color: #43730c;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+h2 {
+  color: #43730c;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+h3 {
+  color: #43730c;
+  font-size: 2.5vw;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.4vw;
+  border-radius: 0.5vw;
+  border: 0.1vw solid #43730c;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.03125vw;
+  transition: border-color 0.3s; /* Add a transition for a smooth effect */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #43730c;
+}
+@media (max-width: 1060px) {
+  h3 {
+    font-size: 1.25rem;
   }
+  p {
+    font-size: 1.05rem;
+  }
+
+  h4 {
+    font-size: 0.8rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+  a {
+    font-size: 1.05rem;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.5vw;
+    border-radius: 0.3vw;
+    border-width: 0.08vw;
+    gap: 0.025vw;
+  }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1061px) {
+  h1 {
+    font-size: 2.3vw;
+  }
+  h2 {
+    font-size: 1.9vw;
+  }
+  h3 {
+    font-size: 1.6vw;
+  }
+  h4 {
+    font-size: 1.3vw;
+  }
+  p {
+    font-size: 0.9vw;
+  }
+
+ 
+
+  input,
+  select,
+  textarea {
+    padding: 0.5vw;
+    gap: 0.02vw;
+  }
+}
+
+.diagonal-container {
+  position: relative;
+  padding: 10px;
+}
+
+.square {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.square1 {
+  background-color: #43730c;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.square2 {
+  background-color: #43730c;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.top-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#43730c, #43730c);
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
+a {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+a {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#43730c, #43730c);
+}
+
+a:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
 }
