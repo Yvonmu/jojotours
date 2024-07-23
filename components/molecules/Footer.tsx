@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="grid ">
               <span>Email</span>
               <p className="font-bold">
-                <Link href={""}>jojotours@gmail.com</Link>
+                <Link href={""}>jojotours2023@gmail.com</Link>
               </p>
             </div>
           </div>

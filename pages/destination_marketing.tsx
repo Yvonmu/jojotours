@@ -30,10 +30,10 @@ export default function Destination_Marketing() {
               </Link>{" "}
               / Email:{" "}
               <Link
-                href={"mailto:jojotours@gmail.com"}
+                href={"mailto:jojotours2023@gmail.com"}
                 className="text-accent font-bold"
               >
-                jojotours@gmail.com
+                jojotours2023@gmail.com
               </Link>
             </p>
             <Image
