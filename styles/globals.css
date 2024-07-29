@@ -115,14 +115,14 @@ textarea:focus {
 }
 @media (max-width: 1060px) {
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
   p {
     font-size: 1.05rem;
   }
 
   h4 {
-    font-size: 0.8rem;
+    font-size: 1.25rem;
   }
   h2 {
     font-size: 2rem;
@@ -243,4 +243,82 @@ a {
 a:hover {
   background-size: 100% 3px;
   background-position: 0 100%;
+}
+
+
+.cardReason {
+  position: relative;
+  background-color: #fff;
+  padding: 2px;
+  border-radius: 8px;
+  border: 1px solid var(--color-bg);
+  transition: all 0.3s ease-in-out;
+}
+
+.cardReason:hover .overlay {
+  height: 100%;
+  width: 100%;
+}
+
+.cardReason:last-child {
+  margin-right: 0;
+}
+
+.cardReason .text {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 5;
+  text-align: center;
+}
+.cardReason .text1 {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 5;
+  text-align: center;
+}
+
+.cardReason .text1 a {
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  background: #43730c;
+  border-radius: 30px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-border);
+}
+.cardReason .text a {
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  background: #43730c;
+  border-radius: 30px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.cardReason .overlay {
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: 0; /* Initial height set to 0 */
+  background: linear-gradient(0deg, #07A1AF 100%, rgba(154, 240, 237, 0.06) 99%);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: height 0.3s ease-in-out;
+}
+
+.buttons {
+  background: #43730c !important;
+  color: #fff !important;
+  transition: 700ms;
+}
+.buttons:hover {
+  /* background: white !important; */
+  /* color: orangered !important; */
+  transform: scale(1.1);
 }
